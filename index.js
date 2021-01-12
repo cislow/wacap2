@@ -33,7 +33,7 @@ const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
             + 'FN:Coslow Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=6282334297175:+62 823-3429-7175\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=6287850112908:+62 878-5011-2908\n' 
             + 'END:VCARD' 
 prefix = '#'
 blocked = []          
