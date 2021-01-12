@@ -219,7 +219,7 @@ client.on('group-participants-update', async (anu) => {
 					break
            case 'apakah':
 					apakah = body.slice(1)
-					const apa =['Iya','Tidak','Bisa Jadi','Coba Ulangi']
+					const apa =['Iya','Tidak','Bisa Jadi','Coba Ulangi','mochiron']
 					const kah = apa[Math.floor(Math.random() * apa.length)]
 					client.sendMessage(from, 'Pertanyaan : *'+apakah+'*\n\nJawaban : '+ kah, text, { quoted: mek })
 					break
@@ -323,7 +323,7 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek })
 					break
 				case 'dare':
-					const dare =['Kirim pesan ke mantan kamu dan bilang "aku masih suka sama kamu','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "🦄💨" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak pungut','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
+					const dare =['Kirim pesan ke mantan kamu dan bilang "aku masih suka sama kamu','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "🦄💨" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak haram','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
 					const der = dare[Math.floor(Math.random() * dare.length)]
 					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, tod, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
@@ -342,7 +342,7 @@ client.on('group-participants-update', async (anu) => {
                 case 'neko':
                     anu = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime` , {method: 'get'})
                     buf = await getBuffer(anu.result)
-                    client.sendMessage(from, buf, image, { quoted: mek, caption: 'ih wibu'})
+                    client.sendMessage(from, buf, image, { quoted: mek, caption: 'ih furry'})
                 break
                 case 'dewabatch':
                     teks = body.slice(11)
@@ -629,20 +629,20 @@ client.on('group-participants-update', async (anu) => {
 					for (let _ of anu) {
 						client.deleteChat(_.jid)
 					}
-					reply('𝗰𝗹𝗲𝗮𝗿 𝗮𝗹𝗹 𝘀𝘂𝗸𝘀𝗲𝘀 𝘆𝗮𝗵  :)')
+					reply('𝗰𝗹𝗲𝗮𝗿 𝗮𝗹𝗹 𝘀𝘂𝗸𝘀𝗲𝘀 𝘆𝗮  :)')
 					break
 			       case 'block':
 				 client.updatePresence(from, Presence.composing) 
 				 client.chatRead (from)
 					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply(mess.only.ownerB)
-					client.blockUser (`${body.slice(7)}@c.us`, "add")
+					client.blockUser (`${body.slice(7)}@s.whatsapp.net`, "add")
 					client.sendMessage(from, `perintah Diterima, memblokir ${body.slice(7)}@c.us`, text)
 					break
                     case 'unblock':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply(mess.only.ownerB)
-				    client.blockUser (`${body.slice(9)}@c.us`, "remove")
+				    client.blockUser (`${body.slice(9)}@s.whatsapp.net`, "remove")
 					client.sendMessage(from, `𝗽𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝗗𝗶𝘁𝗲𝗿𝗶𝗺𝗮, 𝗺𝗲𝗺𝗯𝘂𝗸𝗮 ${body.slice(9)}@c.us`, text)
 				break
 				case 'leave': 
@@ -708,7 +708,7 @@ client.on('group-participants-update', async (anu) => {
             case 'owner':
             case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-       client.sendMessage(from, 'Tuh nomer owner ku >_<, jangan spam atau ku block kamu',MessageType.text, { quoted: mek} )
+       client.sendMessage(from, 'Tuh nomer Eko Sama >_<, jangan spam atau ku santet kamu',MessageType.text, { quoted: mek} )
            break    
            case 'setname':
                 if (!isGroup) return reply(mess.only.group)
