@@ -66,6 +66,7 @@ const help = (prefix) => {
 ┣⊱ *${prefix}indohot*
 ┣━━❀ *Group* ❀━━
 ┣⊱ *${prefix}linkgc*
+┣⊱ *${prefix}edotense*
 ┣⊱ *${prefix}tagall*
 ┣⊱ *${prefix}add* [+62xx]
 ┣⊱ *${prefix}group* [buka/tutup]
