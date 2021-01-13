@@ -293,6 +293,7 @@ client.on('group-participants-update', async (anu) => {
 					quoted: mek
 					}
 					client.sendMessage(from, options, text)
+                                        break
 		case 'edotense':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -310,7 +311,17 @@ client.on('group-participants-update', async (anu) => {
 						mentions(`Perintah di terima, di edotense : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
-					break			
+					break	
+		case 'marvelogo':
+					var gh = body.slice(9)
+					var gbl5 = gh.split("|")[0];
+					var gbl6 = gh.split("|")[1];
+					if (args.length < 1) return reply('Teksnya mana um')
+					reply(mess.wait)
+					anu = await fetchJson(`https://zeksapi.herokuapp.com/api/marvellogo?text1=${gbl5}&text2=${gbl6}&apikey=xptnbot352`, {method: 'get'})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, image, {quoted: mek})
+					break
                 case 'quotemaker':
 					var gh = body.slice(12)
 					var quote = gh.split("|")[0];
