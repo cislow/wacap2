@@ -338,7 +338,12 @@ client.on('group-participants-update', async (anu) => {
 					teks = body.slice(7)
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/anime?query=${teks}`, {method: 'get'})
 					reply('anime nya ni '+teks+' adalah :\n\n'+anu.title)
-					break
+		case 'joox':
+				if (args.length < 1) return reply('Nama lagunya apa kak?')
+                    anu = await fetchJson(`https://api.vhtear.com/ytmp3?query=${body.slice(6)}&apikey=ANTIGRATISNIHANJENKKK`)
+					buffer = await getBuffer(anu.result.mp3)
+					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.judul}.mp3`, quoted: mek, caption: hasil, ptt: false})
+					break			break
                 case 'neko':
                     anu = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime` , {method: 'get'})
                     buf = await getBuffer(anu.result)
