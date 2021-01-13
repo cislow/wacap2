@@ -16,6 +16,7 @@ const help = (prefix) => {
 ┣⊱ *${prefix}ninjalogo*
 ┣⊱ *${prefix}glitch*
 ┣⊱ *${prefix}text3d*
+┣⊱ *${prefix}marvelogo*
 ┣━━❀ *Kerang ajaib* ❀━
 ┣⊱ *${prefix}kapankah*
 ┣⊱ *${prefix}apakah*
