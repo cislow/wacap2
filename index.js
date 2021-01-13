@@ -241,11 +241,11 @@ client.on('group-participants-update', async (anu) => {
 				case 'donate':
 					client.sendMessage(from, donasi(), text)
 				break
-				case 'Iri':
-		        case 'iri?':
+		case 'Iri':
+		case 'iri?':
                 case 'iri':
                    client.sendMessage(from, 'sound' + 'iri.mp3', {quoted: mek, ptt:true})
-               break
+                   break
             case 'abgjago':
             case 'abangjago':
                 client.sendMessage(from, 'sound' + 'abangjago'+'mp3', {quoted: mek, ptt:true})
@@ -368,10 +368,10 @@ client.on('group-participants-update', async (anu) => {
 					reply('anime nya ni '+teks+' adalah :\n\n'+anu.title)
 		case 'joox':
 				if (args.length < 1) return reply('Nama lagunya apa kak?')
-                    anu = await fetchJson(`https://api.vhtear.com/ytmp3?query=${body.slice(6)}&apikey=ANTIGRATISNIHANJENKKK`)
-					buffer = await getBuffer(anu.result.mp3)
-					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.judul}.mp3`, quoted: mek, caption: hasil, ptt: false})
-					break
+                                anu = await fetchJson(`https://api.vhtear.com/ytmp3?query=${body.slice(6)}&apikey=ANTIGRATISNIHANJENKKK`)
+		                buffer = await getBuffer(anu.result.mp3)
+				client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.judul}.mp3`, quoted: mek, caption: hasil, ptt: false})
+				break
                 case 'neko':
                     anu = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime` , {method: 'get'})
                     buf = await getBuffer(anu.result)
@@ -482,17 +482,17 @@ client.on('group-participants-update', async (anu) => {
                     buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
 			     	break
-			    case 'fototiktok':
+               case 'fototiktok':
                     gatauda = body.slice(12)
                     anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktokpp?user=${gatauda}`)
-			        buff = await getBuffer(anu.result)
+		    buff = await getBuffer(anu.result)
                     reply(anu.result)
-			        break
-			    case 'map':
+	            break
+	        case 'map':
                 anu = await fetchJson(`https://mnazria.herokuapp.com/api/maps?search=${body.slice(5)}`, {method: 'get'})
                 buffer = await getBuffer(anu.gambar)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: `${body.slice(5)}`})
-				break
+	        break
                 case 'kbbi':
 					if (args.length < 1) return reply('Apa yang mau dicari um?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/kbbi?search=${body.slice(6)}`, {method: 'get'})
@@ -578,11 +578,11 @@ client.on('group-participants-update', async (anu) => {
 						reply(`Kirim gambar dengan caption ${prefix}sticker atau reply/tag gambar`)
 					}
 					break
-				case 'getses':
-            	if (!isOwner) return reply(mess.only.ownerB)
-            const sesPic = await client.getSnapshot()
-            client.sendFile(from, sesPic, 'session.png', '^_^...', id)
-            break	
+		                case 'getses':
+            	                       if (!isOwner) return reply(mess.only.ownerB)
+                                       const sesPic = await client.getSnapshot()
+                                       client.sendFile(from, sesPic, 'session.png', '^_^...', id)
+                                       break	
 				case 'gtts':	
 				case 'tts':
 					if (args.length < 1) return client.sendMessage(from, 'Diperlukan kode bahasa!!', text, {quoted: mek})
@@ -592,7 +592,7 @@ client.on('group-participants-update', async (anu) => {
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
 					dtt.length > 300
-					? reply('lah teks nya kepanjangan bambang😤')
+					? reply('lah teks nya kepanjangan bambank😤')
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
@@ -629,20 +629,20 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'fitnah':	
 				case 'fake':          
-               if (!isGroup) return reply(mess.only.group)
-                arg = body.substring(body.indexOf(' ') + 1)
+                                if (!isGroup) return reply(mess.only.group)
+                                arg = body.substring(body.indexOf(' ') + 1)
 				isi = arg.split(' |')[0] 
 				pesan = arg.split('|')[1] 
 				pesan2 = arg.split('|')[2] 
-                reply(pesan, isi, pesan2)
-                break
+                                reply(pesan, isi, pesan2)
+                                break
                  case 'linkgc':
 				    if (!isGroup) return reply(mess.only.group)
 				    if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 				    linkgc = await client.groupInviteCode (from)
 				    yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
 				    client.sendMessage(from, yeh, text, {quoted: mek})
-			        break
+			            break
 				case 'tagall':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
