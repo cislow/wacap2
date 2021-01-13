@@ -343,7 +343,7 @@ client.on('group-participants-update', async (anu) => {
                     anu = await fetchJson(`https://api.vhtear.com/ytmp3?query=${body.slice(6)}&apikey=ANTIGRATISNIHANJENKKK`)
 					buffer = await getBuffer(anu.result.mp3)
 					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.judul}.mp3`, quoted: mek, caption: hasil, ptt: false})
-					break			break
+					break
                 case 'neko':
                     anu = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime` , {method: 'get'})
                     buf = await getBuffer(anu.result)
