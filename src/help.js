@@ -45,6 +45,7 @@ const help = (prefix) => {
 ┣━━❀ *Media* ❀━━
 ┣⊱ *${prefix}tiktokstalk*
 ┣⊱ *${prefix}ytmp4*
+┣⊱ *${prefix}ytmp3*
 ┣⊱ *${prefix}joox*
 ┣━━❀ *Other* ❀━━
 ┣⊱ *${prefix}ping*
