@@ -31,6 +31,7 @@ const help = (prefix) => {
 ┣⊱ *${prefix}dare*
 ┣⊱ *${prefix}bucin*
 ┣⊱ *${prefix}persengay*
+┣⊱ *${prefix}imoji*
 ┣━━❀ *Anime* ❀━━
 ┣⊱ *${prefix}loli*
 ┣⊱ *${prefix}nsfwloli*
