@@ -327,7 +327,27 @@ client.on('group-participants-update', async (anu) => {
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://imgur.com/${memein.hash}.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
-					break			
+                                        break
+		case 'ninjalogo':
+                      if (args.length < 1) return reply('Teks nya mana?')
+                      gh = body.slice(11)
+                      gl1 = gh.split("|")[0];
+                      gl2 = gh.split("|")[1];
+                      reply(mess.wait)
+                      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=ninjalogo&text1=${gl1}&text2=${gl2}`, {method: 'get'})
+                      buff = await getBuffer(anu.result)
+                      client.sendMessage(from, buff, image, {quoted: mek})
+                      break
+                case 'glitch':
+					var gh = body.slice(8)
+					var tels3 = gh.split("|")[0];
+					var tels4 = gh.split("|")[1];
+					if (args.length < 1) return reply(mess.blank)
+					reply(mess.wait)
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=glitch&text1=${tels3}&text2=${tels4}`, {method: 'get'})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, image, {quoted: mek})
+					break						
 		case 'marvelogo':
 					var gh = body.slice(9)
 					var gbl5 = gh.split("|")[0];
