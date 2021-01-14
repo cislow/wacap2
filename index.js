@@ -298,6 +298,13 @@ client.on('group-participants-update', async (anu) => {
 					}
 					client.sendMessage(from, options, text)
                                         break
+                             case 'imoji':
+					reply(mess.wait)
+					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/emoji2png?emoji=`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, image, {quoted: mek})
+					break           
 		             case 'edotense':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
