@@ -337,7 +337,18 @@ client.on('group-participants-update', async (anu) => {
 					anu = await fetchJson(`https://zeksapi.herokuapp.com/api/marvellogo?text1=${gbl5}&text2=${gbl6}&apikey=xptnbot352`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
-					break
+                                        break
+		case 'ytmp3':
+					if (args.length < 1) return reply('Urlnya mana um?')
+					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/yta?url=${args[0]}&apiKey=${apiKey}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					teks = `*Title* : ${anu.title}\n*Filesize* : ${anu.filesize}`
+					thumb = await getBuffer(anu.thumb)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp3', filename: `${anu.title}.mp3`, quoted: mek})
+					break			
                 case 'quotemaker':
 					var gh = body.slice(12)
 					var quote = gh.split("|")[0];
