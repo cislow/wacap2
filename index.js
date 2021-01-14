@@ -230,6 +230,10 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, 'Pertanyaan : *'+rate+'*\n\nJawaban : '+ te+'%', text, { quoted: mek })
 					break
           case 'speed':
+                    const timestamp = speed();
+                    const latensi = speed() - timestamp
+                    client.sendMessage(from, `Speed: ${latensi.toFixed(4)} _Second_`, text, { quoted: mek})
+                    break
           case 'ping':
             await client.sendMessage(from, `Pong!!!!\nSpeed: ${processTime(t, moment())} _Second_`)
             break
