@@ -315,7 +315,12 @@ client.on('group-participants-update', async (anu) => {
 						mentions(`Perintah di terima, di edotense : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
-					break	
+                                        break
+		case 'memeindo':
+					memein = await kagApi.memeindo()
+					buffer = await getBuffer(`https://imgur.com/${memein.hash}.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
+					break			
 		case 'marvelogo':
 					var gh = body.slice(9)
 					var gbl5 = gh.split("|")[0];
