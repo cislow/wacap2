@@ -338,6 +338,24 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
                                         break
+                case 'infogc':
+				client.updatePresence(from, Presence.composing)
+				if (!isGroup) return reply(mess.only.group)
+					try {
+					ppimg = await client.getProfilePicture(from)
+				} catch {
+					ppimg = 'https://i.ibb.co/NthF8ds/IMG-20201223-WA0740.jpg'
+				}
+					let buf = await getBuffer(ppimg)
+					teks = (args.length > 1) ? body.slice(8).trim() : ''
+					teks += `*Nama grup :* ${groupName}\n*Deskripsi :* ${groupDesc}\n*Jumlah Admin :* ${groupAdmins.length}\n*Jumlah Member :* ${groupMembers.length}`
+					no = 0
+					for (let admon of groupAdmins) {
+						no += 1
+						teks += `[${no.toString()}]`
+					}
+					client.sendMessage(from, buf, image, {quoted: mek, caption: teks})
+					break                        
 		case 'ytmp3':
 					if (args.length < 1) return reply('Urlnya mana um?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
