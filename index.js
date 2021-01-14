@@ -175,7 +175,7 @@ client.on('group-participants-update', async (anu) => {
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
 			const groupDesc = isGroup ? groupMetadata.desc : ''
-            const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
+                        const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isWelkom = isGroup ? welkom.includes(from) : false
@@ -217,7 +217,7 @@ client.on('group-participants-update', async (anu) => {
 					const koh = kapan[Math.floor(Math.random() * kapan.length)]
 					client.sendMessage(from, 'Pertanyaan : *'+kapankah+'*\n\nJawaban : '+ koh, text, { quoted: mek })
 					break
-           case 'apakah':
+                                case 'apakah':
 					apakah = body.slice(1)
 					const apa =['Iya','Tidak','Bisa Jadi','Coba Ulangi','mochiron']
 					const kah = apa[Math.floor(Math.random() * apa.length)]
@@ -248,23 +248,23 @@ client.on('group-participants-update', async (anu) => {
 		case 'Iri':
 		case 'iri?':
                 case 'iri':
-                   client.sendMessage(from, 'sound' + 'iri.mp3', {quoted: mek, ptt:true})
+                   client.sendMessage(from, 'suara' + 'iri.mp3', {quoted: mek, ptt:true})
                    break
             case 'abgjago':
             case 'abangjago':
-                client.sendMessage(from, 'sound' + 'abangjago'+'mp3', {quoted: mek, ptt:true})
+                client.sendMessage(from, 'suara' + 'abangjago'+'mp3', {quoted: mek, ptt:true})
                 break
             case 'tarekses':
             case 'tariksis':
             case 'tareksis':
             case 'tareeksis':
             case 'tareekses':
-                client.sendMessage(from, './sound'+'/tarekses.mp3', {quoted: mek, ptt:true})
+                client.sendMessage(from, './suara'+'/tarekses.mp3', {quoted: mek, ptt:true})
                 break
             case 'welotka':
             case 'welutka':
             case 'kangcopet':
-                client.sendMessage(dari, './sound'+'welot'+'mp3',{quoted: mek, ptt:true})
+                client.sendMessage(dari, './suara'+'welot'+'mp3',{quoted: mek, ptt:true})
                 break
 				case 'info':
 					me = client.user
@@ -281,7 +281,7 @@ client.on('group-participants-update', async (anu) => {
 					teks += `𝗧𝗼𝘁𝗮𝗹 : ${blocked.length}`
 					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
 					break
-                case 'hidetag':
+                               case 'hidetag':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply('kamu siapa?')
 					var value = body.slice(9)
@@ -298,7 +298,7 @@ client.on('group-participants-update', async (anu) => {
 					}
 					client.sendMessage(from, options, text)
                                         break
-		case 'edotense':
+		             case 'edotense':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
